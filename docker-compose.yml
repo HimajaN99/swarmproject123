@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+ devops:
+    image: himajan/devops
+    ports:
+      - "81:80"
+    deploy:
+      replicas: 3
+    aws:
+      image: himajan/aws
+      ports:
+       - "82:80"
+      deploy:
+        replicas: 3
+    linux:
+      image: himajan/linux
+      ports:
+       - "83:80"
+      deploy:
+        replicas: 3
+    python:
+      image: himajan/python
+      ports:
+        - "84:80"
+      deploy:
+        replicas: 3
+
